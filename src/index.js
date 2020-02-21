@@ -5,6 +5,8 @@ import AuthorQuiz from './AuthorQuiz';
 import * as serviceWorker from './serviceWorker';
 import {shuffle,sample} from 'underscore';
 import {BrowserRouter, Route}  from 'react-router-dom';
+import AddAuthorForm from './AddAuthorForm';
+
 
 
 const authors = [
@@ -88,18 +90,16 @@ function onAnswerSelected(answer) {
 
 }
 
-function AddAuthorForm(match){
-    return <div>
-        <h1>Add Author</h1>
-<p>{JSON.stringify(match)}</p>
-    </div>
-
-}
 
 
 function App(){
 
     return<AuthorQuiz {...state} onAnswerSelected={onAnswerSelected}/>;
+}
+
+function AuthorWrapper(){
+    return <AddAuthorForm onAddAuthor={console.log} />
+
 }
 
 function render(){
@@ -108,7 +108,7 @@ function render(){
     <BrowserRouter>
         <React.Fragment>
       <Route exact path="/" component={App} p/>
-      <Route path="/add" component={AddAuthorForm} />
+      <Route path="/add" component={AuthorWrapper} />
       </React.Fragment>
      </BrowserRouter>, document.getElementById('root'));
 
