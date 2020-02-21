@@ -1,3 +1,12 @@
+﻿Music Quiz es un proyecto desarrollado en REACT aplicando los siguientes conceptos:
+Components
+Props
+State and setState
+Props Validations
+Spread Atributes
+Events
+Forms
+Routes
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
